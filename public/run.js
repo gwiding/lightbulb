@@ -14,7 +14,7 @@ button.addEventListener("click", () => {
     buttonValueIs = false;
   }
 
-  fetch("http://localhost:3000", {
+  fetch("/api", {
     method: "PUT",
     body: JSON.stringify(isOnObj),
     headers: {
@@ -29,11 +29,11 @@ button.addEventListener("click", () => {
       
     });
 });
-setInterval(()=>{fetch("http://localhost:3000/")
+setInterval(()=>{fetch("/api")
 .then((result) => result.json())
 .then((json) => (buttonValueText = json[0].isOn));
-console.log(buttonValueText.isOn);
-insert.textContent = buttonValueText.isOn;
+console.log(buttonValueText);
+
 
 if (buttonValueText.isOn === "false") {
 body.style.background = "black";

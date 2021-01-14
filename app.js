@@ -9,6 +9,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(cors())
 
 
+app.use(express.static("public"));
 
 
 // db.loadDatabase((err) =>{
@@ -23,15 +24,18 @@ let lightOn = [
 
     // db.insert(lightOn)
 
-app.get("/", (req, res)=>{
+app.get("/api", (req, res)=>{
     res.send (lightOn)
+    // res.sendFile(__dirname + "/public/index.html");
+   
 })
 
-app.put("/", (req,res) =>{
+app.put("/api", (req,res) =>{
     const switchA =req.body;
     console.log(switchA)
     lightOn[0].isOn = switchA
     res.status(200).send("IsOn/Off")
+
 })
 
 // app.post("/", (req,res) =>{
@@ -42,4 +46,4 @@ app.put("/", (req,res) =>{
 
 
 
-app.listen(process.env.PORT || 3000, ()=> console.log("server running on port 3000..."))
+app.listen(process.env.PORT || 3000, ()=> console.log("server running..."))
