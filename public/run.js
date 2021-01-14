@@ -43,6 +43,5 @@ body.style.background = "white";
 body.style.color = "black";
 }},100)
 
-button.click()
 
 

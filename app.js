@@ -19,7 +19,7 @@ app.use(express.static("public"));
 // })
 
 let lightOn = [
-    {isOn:"true"}
+    {isOn:""}
     ]
 
     // db.insert(lightOn)
