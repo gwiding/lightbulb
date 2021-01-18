@@ -31,7 +31,7 @@ button.addEventListener("click", () => {
     });
 });
 
-console.log(222)
+
 
 
 setInterval(() => {
