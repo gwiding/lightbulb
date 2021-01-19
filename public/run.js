@@ -1,5 +1,5 @@
 let body = document.querySelector("body");
-const light = document.querySelector('#bulb');
+const light = document.querySelector('.bulb');
 let buttonValueIs;
 let buttonValueText;
 
