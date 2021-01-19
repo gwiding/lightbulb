@@ -1,0 +1,16 @@
+.canvas {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+
+}
+
+ .bulb {  
+    width: 118px; 
+    height: 200px; 
+    background: url("switchon.png") no-repeat;  
+} 
+    
+.bulb.bulb-on { 
+    background: url("switchoffdark.png") no-repeat; 
+}

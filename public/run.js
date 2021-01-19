@@ -1,10 +1,10 @@
-let button = document.getElementById("button");
 let body = document.querySelector("body");
-
+const light = document.querySelector('#bulb');
 let buttonValueIs;
 let buttonValueText;
 
-button.addEventListener("click", () => {
+light.addEventListener("click", (e) => {
+  e.target.classList.toggle('bulb-on');
   if (buttonValueIs === false) {
     isOnObj = { isOn: "true" };
     buttonValueIs = true;
@@ -13,7 +13,6 @@ button.addEventListener("click", () => {
     isOnObj = { isOn: "false" };
     buttonValueIs = false;
     clickOffSound();
-
   }
 
   fetch("/api", {
@@ -32,8 +31,6 @@ button.addEventListener("click", () => {
 });
 
 
-
-
 setInterval(() => {
   fetch("/api")
     .then((result) => result.json())
@@ -43,13 +40,11 @@ setInterval(() => {
   if (buttonValueText.isOn === "false") {
     body.style.background = "black";
     body.style.color = "white";
-
   } else {
-    body.style.background = "yellow";
+    body.style.background = "white";
     body.style.color = "black";
   }
-}, 100);
-
+}, 10);
 
 function clickOnSound(){
   var audio = new Audio("Click.mp3");
